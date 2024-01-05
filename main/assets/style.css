@@ -20,9 +20,9 @@ body {
 }
 
 .row span {
-  margin-right: 8px; /* Adjust this value to increase or decrease spacing */
+  margin-right: 8px;
 }
 
 .prime {
-  color: red;
+  color: green;
 }
