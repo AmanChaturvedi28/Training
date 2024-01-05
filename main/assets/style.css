@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+}
+
+.inputDec {
+  margin-top: 100px;
+}
+
+#submitButton {
+  margin-top: 20px;
+}
+
+.pyramid {
+  margin: 20px auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.row span {
+  margin-right: 8px; /* Adjust this value to increase or decrease spacing */
+}
+
+.prime {
+  color: red;
+}
