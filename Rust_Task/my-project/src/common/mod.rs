@@ -158,3 +158,127 @@ impl Table {
         }
     }
 }
+
+///structure for new cell
+#[derive(Debug, Deserialize, Serialize)]
+pub struct NewCell {
+    pub height: f64,
+    pub width: f64,
+    pub value: String,
+}
+impl NewCell {
+    /// Function to assign new cell data
+    pub fn data_assign(height: f64, width: f64, value: String) -> NewCell {
+        NewCell {
+            height,
+            width,
+            value,
+        }
+    }
+}
+
+///structure for new row
+#[derive(Debug, Deserialize, Serialize)]
+pub struct NewRow {
+    pub row_type: TypeofRow,
+    pub height: f64,
+    pub width: f64,
+    pub cells: Vec<NewCell>,
+    pub total_cells: usize,
+}
+
+impl NewRow {
+    /// Function to assign new row data
+    pub fn row_data(mut cells: Vec<NewCell>, row_type: TypeofRow) -> NewRow {
+        let mut height: f64 = 0.0;
+        let mut width: f64 = 0.0;
+        let total_cells = cells.len();
+
+        for i in 0..cells.len() {
+            if height <= cells[i].height {
+                height = cells[i].height;
+            }
+            width += cells[i].width;
+        }
+
+        let cell_max_height = &height;
+
+        for i in 0..cells.len() {
+            cells[i].height = *cell_max_height;
+        }
+        NewRow {
+            height,
+            width,
+            cells,
+            total_cells,
+            row_type,
+        }
+    }
+}
+
+///structure for new table data
+#[derive(Debug, Deserialize, Serialize)]
+pub struct NewTable {
+    pub height: f64,
+    pub width: f64,
+    pub rows: Vec<NewRow>,
+    pub total_rows: usize,
+}
+
+impl NewTable {
+    /// Function to assign table data
+    pub fn table_data(rows: Vec<NewRow>) -> NewTable {
+        let mut height: f64 = 0.0;
+        let mut width: f64 = 0.0;
+        let total_rows = rows.len();
+
+        for i in 0..rows.len() {
+            if width <= rows[i].width {
+                width = rows[i].width;
+            }
+            height += rows[i].height;
+        }
+
+        NewTable {
+            height,
+            width,
+            rows,
+            total_rows,
+        }
+    }
+}
+
+///structure for headerrow in json data
+#[derive(Debug, Deserialize, Serialize)]
+pub struct HeaderRow {
+    #[serde(rename = "fontSize")]
+    pub font_size: f64,
+    pub title: Vec<String>,
+}
+
+///structure for datarow in json data
+#[derive(Debug, serde::Deserialize)]
+pub struct DataRow {
+    // pub row_type: TypeofRow,
+    #[serde(rename = "fontSize")]
+    pub font_size: f64,
+    pub rows: Vec<Vec<String>>,
+}
+
+///structure for json data
+#[derive(Debug, serde::Deserialize)]
+pub struct JsonData {
+    #[serde(rename = "headerRow")]
+    pub header_row: HeaderRow,
+    #[serde(rename = "dataRows")]
+    pub data_rows: DataRow,
+    #[serde(rename = "pageWidth")]
+    pub page_width: f64,
+}
+
+///type of row in table
+#[derive(Debug, Deserialize, Serialize)]
+pub enum TypeofRow {
+    HeaderRow,
+    DataRow,
+}
