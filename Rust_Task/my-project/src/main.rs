@@ -23,7 +23,6 @@ use crate::string_task::{frequency::frequency_main,replacing::replace_main};
 use crate::table::table_main;
 use  self::employee_with_hashmap::employee_with_hashmap_main;
 use  self::student_with_hashmap::student_with_hashmap_main;
-use crate::table::table_main;
 use crate::thread_task1::thread_task1_main;
 
 ///This is the entry point for this application. It calls various functions from different modules

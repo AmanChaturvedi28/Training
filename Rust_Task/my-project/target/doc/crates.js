@@ -1,1 +1,1 @@
-window.ALL_CRATES = ["itoa","my_project","proc_macro2","quote","ryu","serde","serde_derive","serde_json","syn","unicode_ident"];
+window.ALL_CRATES = ["cfg_if","chrono","getrandom","itoa","lazy_static","my_project","num_traits","ppv_lite86","proc_macro2","quote","rand","rand_chacha","rand_core","ryu","serde","serde_derive","serde_json","syn","unicode_ident","windows_targets","windows_x86_64_gnu"];

@@ -33,6 +33,11 @@
 <a href="#33" id="33">33</a>
 <a href="#34" id="34">34</a>
 <a href="#35" id="35">35</a>
+<a href="#36" id="36">36</a>
+<a href="#37" id="37">37</a>
+<a href="#38" id="38">38</a>
+<a href="#39" id="39">39</a>
+<a href="#40" id="40">40</a>
 </pre></div><pre class="rust"><code><span class="doccomment">///common module includes all the structures and enums for the project
 </span><span class="kw">pub mod </span>common;
 <span class="doccomment">///student module includes functions for student data
@@ -47,25 +52,29 @@
 </span><span class="kw">pub mod </span>employee_with_hashmap;
 <span class="doccomment">///student module includes functions for employee data which uses hashmap
 </span><span class="kw">pub mod </span>student_with_hashmap;
+<span class="doccomment">///table module includes functions for formatting the table based on the data
+</span><span class="kw">pub mod </span>new_table;
+<span class="doccomment">///thread_task1 module includes functions for adding, reading and deleting data on different thread
+</span><span class="kw">pub mod </span>thread_task1;
 
-
-<span class="comment">// use crate::student::student_main;
-</span><span class="kw">use </span><span class="self">self</span>::employee::employee_main;
+<span class="kw">use </span><span class="kw">crate</span>::student::student_main;
+<span class="kw">use </span><span class="self">self</span>::employee::employee_main;
 <span class="kw">use </span><span class="kw">crate</span>::string_task::{frequency::frequency_main,replacing::replace_main};
 <span class="kw">use </span><span class="kw">crate</span>::table::table_main;
 <span class="kw">use  </span><span class="self">self</span>::employee_with_hashmap::employee_with_hashmap_main;
 <span class="kw">use  </span><span class="self">self</span>::student_with_hashmap::student_with_hashmap_main;
+<span class="kw">use </span><span class="kw">crate</span>::thread_task1::thread_task1_main;
 
 <span class="doccomment">///This is the entry point for this application. It calls various functions from different modules
 </span><span class="kw">pub fn </span>main() {  
     <span class="comment">// student_main();
     // student::student_main();
-    </span>student_with_hashmap_main();
-    <span class="comment">// employee_main();
+    // student_with_hashmap_main();
+    // employee_main();
     // employee_with_hashmap_main();
     // frequency_main();
     // replace_main();
     // table_main();
-
-</span>}
-</code></pre></div></section></main></body></html>
+    // new_table();
+    </span>thread_task1_main();
+}</code></pre></div></section></main></body></html>
