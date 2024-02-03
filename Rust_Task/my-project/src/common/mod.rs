@@ -62,7 +62,7 @@ pub struct Cell {
     pub value: u32,
 }
 
-impl Cell {
+pub impl Cell {
     /// Function to assign cell data 
     pub fn data_assign(height: u32, width: u32, value: u32) -> Cell {
         Cell { height, width, value }
@@ -78,7 +78,7 @@ pub struct Row {
     pub total_cells: usize,
 }
 
-impl Row {
+pub impl Row {
     /// Function to assign row data 
     pub fn row_data(cells: Vec<Cell>) -> Row {
         let mut height: u32 = 0;
@@ -123,7 +123,7 @@ pub struct Table {
     pub total_rows: usize,
 }
 
-impl Table {
+pub impl Table {
     /// Function to assign table data
     pub fn table_data(rows: Vec<Row>) -> Table {
         let mut height: u32 = 0;
@@ -166,7 +166,7 @@ pub struct NewCell {
     pub width: f64,
     pub value: String,
 }
-impl NewCell {
+pub impl NewCell {
     /// Function to assign new cell data
     pub fn data_assign(height: f64, width: f64, value: String) -> NewCell {
         NewCell {
@@ -187,7 +187,7 @@ pub struct NewRow {
     pub total_cells: usize,
 }
 
-impl NewRow {
+pub impl NewRow {
     /// Function to assign new row data
     pub fn row_data(mut cells: Vec<NewCell>, row_type: TypeofRow) -> NewRow {
         let mut height: f64 = 0.0;
@@ -225,7 +225,7 @@ pub struct NewTable {
     pub total_rows: usize,
 }
 
-impl NewTable {
+pub impl NewTable {
     /// Function to assign table data
     pub fn table_data(rows: Vec<NewRow>) -> NewTable {
         let mut height: f64 = 0.0;
@@ -281,4 +281,21 @@ pub struct JsonData {
 pub enum TypeofRow {
     HeaderRow,
     DataRow,
+}
+
+#[derive(Debug)]
+pub struct Data{
+    id: i32,
+    name: String,
+    timestamp: DateTime<Utc>
+}
+
+pub impl Data {
+    fn data_assign(id: i32,name: String,timestamp: DateTime<Utc>) -> Self{
+        Self{
+            id,
+            name,
+            timestamp
+        }
+    }
 }
