@@ -283,6 +283,7 @@ pub enum TypeofRow {
     DataRow,
 }
 
+///structure for data that works on thread
 #[derive(Debug)]
 pub struct Data{
     id: i32,
@@ -291,6 +292,7 @@ pub struct Data{
 }
 
 pub impl Data {
+    ///function that assign data to structure
     fn data_assign(id: i32,name: String,timestamp: DateTime<Utc>) -> Self{
         Self{
             id,

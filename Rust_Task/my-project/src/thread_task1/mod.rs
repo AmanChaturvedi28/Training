@@ -1,5 +1,6 @@
 use crate::common::Data;
 
+///function to generate raname name of 5 character
 fn get_name() -> String{
     let mut name = String::new();
     for i in 1..=5{
