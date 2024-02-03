@@ -1,4 +1,10 @@
 use crate::common::Data;
+use rand::Rng;
+use std::sync::{Arc, RwLock};
+use std::thread;
+use std::time::Duration;
+use chrono::Utc;
+use chrono::DateTime;
 
 ///function to generate raname name of 5 character
 fn get_name() -> String{
@@ -10,7 +16,7 @@ fn get_name() -> String{
     name
 }
 
-fn thread_task1_main() {
+pub fn thread_task1_main() {
     let v = RwLock::new(Vec::new());
     let arc = Arc::new(v);
 
