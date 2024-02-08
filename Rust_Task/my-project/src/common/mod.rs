@@ -303,3 +303,20 @@ impl Data {
         }
     }
 }
+
+#[derive(Debug, Deserialize,PartialEq)]
+pub struct MasterData {
+    pub id: i32,
+    pub name: String,
+    pub skills: Vec<String>,
+    pub status: String,
+    pub language: String,
+}
+
+#[derive(Debug,PartialEq)]
+pub struct RequestData{
+    pub skill: String,
+    pub language: String,
+    pub available: String,
+    pub time: DateTime<Utc>
+}

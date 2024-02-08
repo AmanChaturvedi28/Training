@@ -16,14 +16,16 @@ pub mod student_with_hashmap;
 pub mod new_table;
 ///thread_task1 module includes functions for adding, reading and deleting data on different thread
 pub mod thread_task1;
+pub mod thread_task2;
 
-use crate::student::student_main;
-use self::employee::employee_main;
-use crate::string_task::{frequency::frequency_main,replacing::replace_main};
-use crate::table::table_main;
-use  self::employee_with_hashmap::employee_with_hashmap_main;
-use  self::student_with_hashmap::student_with_hashmap_main;
-use crate::thread_task1::thread_task1_main;
+// use crate::student::student_main;
+// use self::employee::employee_main;
+// use crate::string_task::{frequency::frequency_main,replacing::replace_main};
+// use crate::table::table_main;
+// use  self::employee_with_hashmap::employee_with_hashmap_main;
+// use  self::student_with_hashmap::student_with_hashmap_main;
+// use crate::thread_task1::thread_task1_main;
+use crate::thread_task2::thread_task2_main;
 
 ///This is the entry point for this application. It calls various functions from different modules
 pub fn main() {  
@@ -36,5 +38,6 @@ pub fn main() {
     // replace_main();
     // table_main();
     // new_table();
-    thread_task1_main();
+    // thread_task1_main();
+    thread_task2_main();
 }
