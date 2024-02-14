@@ -7,6 +7,7 @@ use std::{collections::VecDeque, sync::{Arc, RwLock}, time::SystemTime};
 
 pub fn random_data() {
     let ref1: Arc<RwLock<VecDeque<RequestData>>> = Arc::clone(&RANDOM_DATA);
+    let ref2: Arc<RwLock<VecDeque<RequestData>>> = Arc::clone(&RANDOM_DATA);
     let skill = rand::thread_rng().gen_range(1..=12);
     let rnd_skill = match skill {
         1 => &SKILLS[0],

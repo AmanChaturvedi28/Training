@@ -320,3 +320,40 @@ pub struct RequestData{
     pub available: String,
     pub time: DateTime<Utc>
 }
+
+#[derive(Debug, Deserialize, Serialize, Clone)]
+pub struct AxumStudent {
+    pub id: i32,
+    pub name: String,
+    pub phone: String,
+    pub email: String,
+    pub city: String,
+    pub address: String,
+    pub marks: Vec<u32>,
+}
+
+#[derive(Debug, Deserialize, Serialize, Clone)]
+pub struct AxumEmployee {
+    pub id: i32,
+    pub name: String,
+    pub age: i32,
+    pub skills: Vec<String>,
+    pub position: Option<String>,
+    pub experience: Option<i32>,
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+pub struct AxumMasterData {
+    pub id: i32,
+    pub name: String,
+    pub skills: Vec<String>,
+    pub status: String,
+    pub language: String,
+}
+
+#[derive(Serialize, Deserialize, Clone)]
+pub struct Message<T> {
+    pub status: u32,
+    pub message_key: String,
+    pub data: T,
+}
