@@ -1,6 +1,7 @@
 use super::{SKILLS, USER_DATA};
 use rand::{thread_rng, Rng};
 
+///this function shuffles all data given
 pub fn shuffle_data() {
     let mut ref1 = USER_DATA.write().expect("Unable to write");
 

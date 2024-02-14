@@ -1,6 +1,6 @@
 use crate::thread_task2::{HASH_DATA, USER_DATA};
 
-
+///this function assigne the executive for perticular task
 pub fn task_assigner() {
     let user_data = USER_DATA.read().expect("Unable to read");
     let mut hash_data = HASH_DATA.write().expect("Unable to write");

@@ -5,6 +5,7 @@ use chrono::{DateTime, Utc};
 use rand::Rng;
 use std::{collections::VecDeque, sync::{Arc, RwLock}, time::SystemTime};
 
+///this function generates the random data
 pub fn random_data() {
     let ref1: Arc<RwLock<VecDeque<RequestData>>> = Arc::clone(&RANDOM_DATA);
     let ref2: Arc<RwLock<VecDeque<RequestData>>> = Arc::clone(&RANDOM_DATA);

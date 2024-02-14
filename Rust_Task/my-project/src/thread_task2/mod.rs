@@ -59,7 +59,7 @@ lazy_static! {
     pub static ref RANDOM_DATA: Arc<RwLock<VecDeque<RequestData>>> = Arc::new(RwLock::new(VecDeque::new()));
 }
 
-
+///this function is the starting point for thread task2 which includes multiple thread working on different functionalities
 pub fn thread_task2_main() {
     // let abc=Arc::clone(&HASH_DATA);
     let t1 = thread::spawn(move || loop{

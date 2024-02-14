@@ -16,7 +16,9 @@ pub mod student_with_hashmap;
 pub mod new_table;
 ///thread_task1 module includes functions for adding, reading and deleting data on different thread
 pub mod thread_task1;
+///thread_task2 module includes functions for task bifurcation and task assigner
 pub mod thread_task2;
+///axum_task include function for creating server and routes for different requests
 pub mod axum_task;
 
 // use crate::student::student_main;

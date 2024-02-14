@@ -8,6 +8,7 @@ use axum::{
     Json,
 };
 
+///this handler reads the employee data based on id
 pub async fn read_employee_id(Path(id): Path<i32>) -> Response {
     let employee_id = id;
     let employee_data = EMPLOYEE_DATA.read().unwrap();
@@ -32,6 +33,7 @@ pub async fn read_employee_id(Path(id): Path<i32>) -> Response {
     }
 }
 
+///this handler reads all employee data
 pub async fn read_employee() -> Response {
     return {
         Json(Message {
@@ -43,6 +45,7 @@ pub async fn read_employee() -> Response {
     .into_response();
 }
 
+///this handler deletes the employee data for specified id
 pub async fn delete_employee(Path(id): Path<i32>) -> Response {
     let employee_id = id;
     let mut employee_data = EMPLOYEE_DATA.write().unwrap();
@@ -68,6 +71,7 @@ pub async fn delete_employee(Path(id): Path<i32>) -> Response {
     }
 }
 
+///this handler updates the employee data  
 pub async fn update_employee(Json(update_employee): Json<AxumEmployee>) -> Response {
     let employee_id = update_employee.id;
     let mut employee_data = EMPLOYEE_DATA.write().unwrap();
@@ -97,6 +101,7 @@ pub async fn update_employee(Json(update_employee): Json<AxumEmployee>) -> Respo
     }
 }
 
+///this handler create the new employee
 pub async fn create_employee(Json(employee): Json<AxumEmployee>) -> Response {
     let employee_id = employee.id;
 

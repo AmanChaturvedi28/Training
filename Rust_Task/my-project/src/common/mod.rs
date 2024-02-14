@@ -304,6 +304,7 @@ impl Data {
     }
 }
 
+///structure of Master data for thread_task2
 #[derive(Debug, Deserialize,PartialEq)]
 pub struct MasterData {
     pub id: i32,
@@ -313,6 +314,7 @@ pub struct MasterData {
     pub language: String,
 }
 
+///structure of Request data for thread_task2
 #[derive(Debug,PartialEq)]
 pub struct RequestData{
     pub skill: String,
@@ -321,6 +323,7 @@ pub struct RequestData{
     pub time: DateTime<Utc>
 }
 
+///structure of student data for axum_task
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct AxumStudent {
     pub id: i32,
@@ -332,6 +335,7 @@ pub struct AxumStudent {
     pub marks: Vec<u32>,
 }
 
+///structure of employee data for axum_task
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct AxumEmployee {
     pub id: i32,
@@ -342,6 +346,7 @@ pub struct AxumEmployee {
     pub experience: Option<i32>,
 }
 
+///structure of master data for axum_task
 #[derive(Serialize, Deserialize, Clone)]
 pub struct AxumMasterData {
     pub id: i32,

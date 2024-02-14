@@ -7,6 +7,7 @@ use executives_model::read_executive_id;
 use executives_model::update_executive;
 use executives_model::create_executive;
 
+///this function inclues all the routes that work on executives data
 pub fn get_executives() -> Router {
     let routes = Router::new()
         .route("/read_executive_id/:id", post(read_executive_id))

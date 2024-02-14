@@ -6,6 +6,7 @@ use axum::{
 
 use crate::{axum_task::STUDENT_DATA, common::{AxumStudent, Message}};
 
+///this handler reads all student data
 pub async fn read_student() -> Response {
     return {
         Json(Message {
@@ -17,6 +18,7 @@ pub async fn read_student() -> Response {
     .into_response();
 }
 
+///this handler reads the student data based on id
 pub async fn read_student_id(Path(id): Path<i32>) -> Response {
     let student_id = id;
     let student_data = STUDENT_DATA.read().unwrap();
@@ -38,6 +40,7 @@ pub async fn read_student_id(Path(id): Path<i32>) -> Response {
     }
 }
 
+///this handler deletes the student data for specified id
 pub async fn delete_student(Path(id): Path<i32>) -> Response {
     let student_id = id;
     let mut student_data = STUDENT_DATA.write().unwrap();
@@ -62,6 +65,7 @@ pub async fn delete_student(Path(id): Path<i32>) -> Response {
     }
 }
 
+///this handler updates the student data 
 pub async fn update_student(Json(update_student): Json<AxumStudent>) -> Response {
     let student_id = update_student.id;
     let mut student_data = STUDENT_DATA.write().unwrap();
@@ -92,6 +96,7 @@ pub async fn update_student(Json(update_student): Json<AxumStudent>) -> Response
     }
 }
 
+///this function create the new student
 pub async fn create_student(Json(student): Json<AxumStudent>) -> Response {
     let student_id = student.id;
 

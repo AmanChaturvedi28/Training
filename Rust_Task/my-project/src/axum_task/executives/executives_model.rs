@@ -8,6 +8,7 @@ use axum::{
     Json,
 };
 
+///this handler reads all executives data
 pub async fn read_executive() -> Response {
     return {
         Json(Message {
@@ -19,6 +20,7 @@ pub async fn read_executive() -> Response {
     .into_response();
 }
 
+///this handler reads the executive data based on id
 pub async fn read_executive_id(Path(id): Path<i32>) -> Response {
     let executive_id = id;
     let executive_data = EXECUTIVE_DATA.read().unwrap();
@@ -44,6 +46,7 @@ pub async fn read_executive_id(Path(id): Path<i32>) -> Response {
     }
 }
 
+///this handler deletes the executive data for specified id
 pub async fn delete_executive(Path(id): Path<i32>) -> Response {
     let executive_id = id;
     let mut executive_data = EXECUTIVE_DATA.write().unwrap();
@@ -69,6 +72,7 @@ pub async fn delete_executive(Path(id): Path<i32>) -> Response {
     }
 }
 
+///this handler updates the executive data 
 pub async fn update_executive(Json(update_executive): Json<AxumMasterData>) -> Response {
     let executive_id = update_executive.id;
     let mut executive_data = EXECUTIVE_DATA.write().unwrap();
@@ -97,6 +101,7 @@ pub async fn update_executive(Json(update_executive): Json<AxumMasterData>) -> R
     }
 }
 
+///this function create the new executive
 pub async fn create_executive(Json(executive): Json<AxumMasterData>) -> Response {
     let executive_id = executive.id;
 

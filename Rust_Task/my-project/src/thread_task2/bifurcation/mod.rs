@@ -2,6 +2,7 @@ use std::{collections::VecDeque, sync::{Arc, RwLock}};
 use crate::thread_task2::RANDOM_DATA;
 use super::{RequestData, HASH_DATA};
 
+///this function bifurcates all the task for level1
 pub fn bifurcation (){
     let bifer_ref: Arc<RwLock<VecDeque<RequestData>>> = Arc::clone(&RANDOM_DATA);
 

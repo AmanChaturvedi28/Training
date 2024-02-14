@@ -4,6 +4,7 @@ use employee_model::{read_employee,read_employee_id,delete_employee};
 use employee_model::update_employee;
 use employee_model::create_employee;
 
+///this function inclues all the routes that work on employee data
 pub fn get_employee() -> Router{
     let routes = Router::new()
     .route("/read_employee_id/:id", post(read_employee_id))

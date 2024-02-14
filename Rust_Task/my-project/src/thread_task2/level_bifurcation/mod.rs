@@ -2,6 +2,7 @@ use super::{RequestData, HASH_DATA};
 use chrono::Utc;
 use std::collections::{HashMap, VecDeque};
 
+///this function bifurcates the task in different levels depending on the time
 pub fn level_bifurcation() {
     let mut hash_temp: HashMap<Option<String>, VecDeque<RequestData>> = HashMap::new();
 

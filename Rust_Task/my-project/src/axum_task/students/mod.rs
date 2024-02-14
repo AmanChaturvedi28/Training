@@ -7,6 +7,7 @@ use students_model::delete_student;
 use students_model::create_student;
 use students_model::update_student;
 
+///this function inclues all the routes that work on student data
 pub fn get_student() -> Router {
     let routes = Router::new()
     .route("/read_student", post(read_student))
