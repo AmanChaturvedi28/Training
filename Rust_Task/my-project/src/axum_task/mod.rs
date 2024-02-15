@@ -3,11 +3,13 @@ pub mod employee;
 pub mod routes;
 pub mod executives;
 pub mod students;
+pub mod middlewares;
 
 use std::{fs, sync::{Arc, RwLock}};
 use lazy_static::lazy_static;
 use health_check::health_check;
 use routes::get_routes;
+use middlewares::get_middlewares;
 
 use crate::common::{AxumEmployee, AxumMasterData, AxumStudent};
 
@@ -40,6 +42,7 @@ lazy_static!{
 ///this is the starting point for axum_task
 pub async fn axum_task_main() {
     let app = get_routes();
+    let app = get_middlewares(app);
     println!("Server Running!!");
 
     axum::Server::bind(&"0.0.0.0:3000".parse().unwrap()).serve(app.into_make_service()).await.unwrap();
