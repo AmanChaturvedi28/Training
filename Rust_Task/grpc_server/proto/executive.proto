@@ -1,0 +1,30 @@
+syntax = "proto3";
+package exec;
+
+service ExecutiveService {
+  rpc GetExecutive (ExecutiveId) returns (ExecutiveResponse);
+  rpc GetAllExecutive (Empty) returns (ExecutiveResponse);
+  rpc AddExecutive (ExecutiveData) returns (ExecutiveResponse);
+  rpc UpdateExecutive (ExecutiveData) returns (ExecutiveResponse);
+  rpc DeleteExecutive (ExecutiveId) returns (ExecutiveResponse);
+}
+
+message Empty{}
+
+message ExecutiveId {
+  int32 id = 1;
+}
+
+message ExecutiveResponse {
+  int32 key = 1;
+  string status = 2;
+  string data = 3;
+}
+
+message ExecutiveData {
+  int32 id = 1;
+  string name = 2;
+  repeated string skills = 3;
+  string status = 4;
+  string language = 5;
+}

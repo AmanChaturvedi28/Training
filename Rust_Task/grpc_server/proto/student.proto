@@ -1,0 +1,32 @@
+syntax = "proto3";
+package stud;
+
+service StudentService {
+  rpc GetStudent (StudentId) returns (StudentResponse);
+  rpc GetAllStudent (Empty) returns (StudentResponse);
+  rpc AddStudent (StudentData) returns (StudentResponse);
+  rpc UpdateStudent (StudentData) returns (StudentResponse);
+  rpc DeleteStudent (StudentId) returns (StudentResponse);
+}
+
+message Empty{}
+
+message StudentId {
+  int32 id = 1;
+}
+
+message StudentResponse {
+  int32 key = 1;
+  string status = 2;
+  string data = 3;
+}
+
+message StudentData {
+  int32 id = 1;
+  string name = 2;
+  string phone = 3;
+  string email = 4;
+  string city = 5;
+  string address = 6;
+  repeated uint32 marks = 7;
+}

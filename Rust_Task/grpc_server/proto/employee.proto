@@ -1,0 +1,31 @@
+syntax = "proto3";
+package emp;
+
+service EmployeeService {
+  rpc GetEmployee (EmployeeId) returns (EmployeeResponse);
+  rpc GetAllEmployee (Empty) returns (EmployeeResponse);
+  rpc AddEmployee (EmployeeData) returns (EmployeeResponse);
+  rpc UpdateEmployee (EmployeeData) returns (EmployeeResponse);
+  rpc DeleteEmployee (EmployeeId) returns (EmployeeResponse);
+}
+
+message Empty{}
+
+message EmployeeId {
+  int32 id = 1;
+}
+
+message EmployeeResponse {
+  int32 key = 1;
+  string status = 2;
+  string data = 3;
+}
+
+message EmployeeData {
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+  repeated string skills = 4;
+  string position = 5;
+  int32 experience = 6;
+}
