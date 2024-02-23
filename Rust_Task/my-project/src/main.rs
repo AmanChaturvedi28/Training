@@ -20,6 +20,7 @@ pub mod thread_task1;
 pub mod thread_task2;
 ///axum_task include function for creating server and routes for different requests
 pub mod axum_task;
+pub mod area;
 
 // use crate::student::student_main;
 // use self::employee::employee_main;
@@ -29,11 +30,12 @@ pub mod axum_task;
 // use  self::student_with_hashmap::student_with_hashmap_main;
 // use crate::thread_task1::thread_task1_main;
 // use crate::thread_task2::thread_task2_main;
-use self::axum_task::axum_task_main;
+// use self::axum_task::axum_task_main;
+use area::area_main;
 
 ///This is the entry point for this application. It calls various functions from different modules
-#[tokio::main]
-pub async fn main() {  
+// #[tokio::main]
+pub fn main() {  
     // student_main();
     // student::student_main();
     // student_with_hashmap_main();
@@ -45,5 +47,6 @@ pub async fn main() {
     // new_table();
     // thread_task1_main();
     // thread_task2_main();
-    axum_task_main().await;
+    // axum_task_main().await;
+    area_main();
 }

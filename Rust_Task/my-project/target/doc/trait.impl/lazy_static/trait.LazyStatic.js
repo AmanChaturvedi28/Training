@@ -1,3 +1,0 @@
-(function() {var implementors = {
-"my_project":[["impl <a class=\"trait\" href=\"lazy_static/trait.LazyStatic.html\" title=\"trait lazy_static::LazyStatic\">LazyStatic</a> for <a class=\"struct\" href=\"my_project/new_table/struct.CHAR_WIDTH.html\" title=\"struct my_project::new_table::CHAR_WIDTH\">CHAR_WIDTH</a>"]]
-};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

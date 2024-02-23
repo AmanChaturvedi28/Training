@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["get_name","thread_task1_main"]};
